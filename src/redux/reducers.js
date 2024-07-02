@@ -11,7 +11,11 @@ export const todoReducer = (state = initialState, action) => {
         ...state,
         todos: [
           ...state.todos,
-          { text: action.payload.text, completed: false },
+          {
+            text: action.payload.text,
+            completed: false,
+            id: Math.floor(1000 * Math.random() + 1),
+          },
         ],
         filter: state.filter,
         searchQuery: state.searchQuery,
