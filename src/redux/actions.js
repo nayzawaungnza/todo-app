@@ -1,4 +1,3 @@
-import { db } from "../firebase/firebase";
 import {
   ADD_TODO,
   TOGGLE_TODO,
@@ -9,25 +8,11 @@ import {
   MARK_ALL_COMPLETED,
   UPDATE_SEARCH_QUERY,
 } from "./actionTypes";
-import { collection } from "firebase/firestore";
 export const addTodo = (text) => ({
   type: ADD_TODO,
   payload: { text },
 });
 
-// export const addTodo = (text) => sync() => {
-//   const newTodo = {
-//     text,
-//     completed: false,
-//     id: Math.floor(1000 * Math.random() + 1),
-//   };
-//   await db.collection("todosapp").add(newTodo);
-
-//   return {
-//     type: ADD_TODO,
-//     payload: { text },
-//   };
-// };
 export const toggleTodo = (id) => ({
   type: TOGGLE_TODO,
   payload: { id },
